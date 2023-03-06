@@ -1,5 +1,6 @@
 package com.example.capstonemovieapp.core.data
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import com.example.capstonemovieapp.core.data.source.remote.network.ApiResponse

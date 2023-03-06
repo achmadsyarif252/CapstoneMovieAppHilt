@@ -56,5 +56,5 @@ data class MovieEntity(
     var voteCount: Int? = null,
 
     @ColumnInfo(name = "isFavorite")
-    var isFavorite: Boolean
+    var isFavorite: Boolean = false
 ) : Parcelable

@@ -1,5 +1,6 @@
 package com.example.capstonemovieapp.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -14,6 +15,7 @@ import com.example.capstonemovieapp.core.data.Resource
 import com.example.capstonemovieapp.core.ui.MovieAdapter
 import com.example.capstonemovieapp.core.ui.ViewModelFactory
 import com.example.capstonemovieapp.databinding.FragmentHomeBinding
+import com.example.capstonemovieapp.detail.DetailMovieActivity
 
 class HomeFragment : Fragment() {
     private lateinit var homeViewModel: HomeViewModel
@@ -37,6 +39,11 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         if (activity != null) {
             val movieAdapter = MovieAdapter()
+            movieAdapter.onItemClick = { selectedData ->
+                val intent = Intent(activity, DetailMovieActivity::class.java)
+                intent.putExtra(DetailMovieActivity.EXTRA_DATA, selectedData)
+                startActivity(intent)
+            }
             val factory = ViewModelFactory.getInstance(requireActivity())
             val homeViewModel =
                 ViewModelProvider(this, factory)[HomeViewModel::class.java]

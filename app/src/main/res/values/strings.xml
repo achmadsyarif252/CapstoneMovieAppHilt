@@ -6,4 +6,6 @@
     <string name="title_favorite">Favorite</string>
     <string name="title_search">Search</string>
     <string name="something_wrong">Error something wrong</string>
+    <string name="submit">favorite</string>
+    <string name="no_data">Tidak ada movie favorite saat ini</string>
 </resources>

@@ -60,7 +60,7 @@ class MovieRepository private constructor(
     }
 
     override fun setFavoriteMovie(movie: Movie, state: Boolean) {
-        val tourismEntity = DataMapper.mapDomainToEntity(movie)
-        appExecutors.diskIO().execute { localDataSource.setFavoriteTourism(tourismEntity, state) }
+        val movieEntity = DataMapper.mapDomainToEntity(movie)
+        appExecutors.diskIO().execute { localDataSource.setFavoriteTourism(movieEntity, state) }
     }
 }

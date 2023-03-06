@@ -6,7 +6,7 @@ import com.example.capstonemovieapp.core.domain.model.Movie
 
 object DataMapper {
     fun mapResponsesToEntities(input: List<MovieResponse>): List<MovieEntity> {
-        val tourismList = ArrayList<MovieEntity>()
+        val movieList = ArrayList<MovieEntity>()
         input.map {
             val movie = MovieEntity(
                 overview = it.overview,
@@ -20,14 +20,14 @@ object DataMapper {
                 releaseDate = it.releaseDate,
                 popularity = it.popularity,
                 voteAverage = it.voteAverage,
-                id=it.id,
+                id = it.id,
                 adult = it.adult,
                 voteCount = it.voteCount,
                 isFavorite = false
             )
-            tourismList.add(movie)
+            movieList.add(movie)
         }
-        return tourismList
+        return movieList
     }
 
     fun mapEntitiesToDomain(input: List<MovieEntity>): List<Movie> =
@@ -44,10 +44,10 @@ object DataMapper {
                 releaseDate = it.releaseDate,
                 popularity = it.popularity,
                 voteAverage = it.voteAverage,
-                id=it.id,
+                id = it.id,
                 adult = it.adult,
                 voteCount = it.voteCount,
-                isFavorite = false
+                isFavorite = it.isFavorite
             )
         }
 
@@ -63,9 +63,9 @@ object DataMapper {
         releaseDate = input.releaseDate,
         popularity = input.popularity,
         voteAverage = input.voteAverage,
-        id=input.id,
+        id = input.id,
         adult = input.adult,
         voteCount = input.voteCount,
-        isFavorite = false
+        isFavorite = input.isFavorite
     )
 }

@@ -6,9 +6,6 @@ import androidx.lifecycle.ViewModel
 import com.example.capstonemovieapp.core.domain.usecase.MovieUseCase
 
 class FavoriteViewModel(movieUseCase: MovieUseCase) : ViewModel() {
+    val favoriteMovie = movieUseCase.getFavoriteMovie()
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is notifications Fragment"
-    }
-    val text: LiveData<String> = _text
 }

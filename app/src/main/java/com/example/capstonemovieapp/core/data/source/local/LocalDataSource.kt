@@ -1,5 +1,6 @@
 package com.example.capstonemovieapp.core.data.source.local
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import com.example.capstonemovieapp.core.data.source.local.entity.MovieEntity
 import com.example.capstonemovieapp.core.data.source.local.room.MovieDao
