@@ -44,7 +44,7 @@ class MovieRepository private constructor(
                 data == null || data.isEmpty()
 
             override fun createCall(): LiveData<ApiResponse<List<MovieResponse>>> =
-                remoteDataSource.getAllTourism()
+                remoteDataSource.getAllMovie()
 
             override fun saveCallResult(data: List<MovieResponse>) {
                 val movieList = DataMapper.mapResponsesToEntities(data)
