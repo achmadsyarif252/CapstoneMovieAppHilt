@@ -3,30 +3,16 @@ package com.example.capstonemovieapp.core.ui
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.capstonemovieapp.core.di.Injection
 import com.example.capstonemovieapp.core.domain.usecase.MovieUseCase
 import com.example.capstonemovieapp.detail.DetailMovieViewModel
+import com.example.capstonemovieapp.di.AppScope
 import com.example.capstonemovieapp.favorite.FavoriteViewModel
 import com.example.capstonemovieapp.home.HomeViewModel
+import javax.inject.Inject
 
-class ViewModelFactory private constructor(private val movieUseCase: MovieUseCase) :
+@AppScope
+class ViewModelFactory @Inject constructor(private val movieUseCase: MovieUseCase) :
     ViewModelProvider.NewInstanceFactory() {
-
-    companion object {
-        @Volatile
-        private var instance: ViewModelFactory? = null
-
-        fun getInstance(context: Context): ViewModelFactory =
-            instance
-                ?: synchronized(this) {
-                instance
-                    ?: ViewModelFactory(
-                        Injection.provideMovieUseCase(
-                            context
-                        )
-                    )
-            }
-    }
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T =

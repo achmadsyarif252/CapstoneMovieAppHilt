@@ -10,18 +10,11 @@ import io.reactivex.Flowable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.PublishSubject
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class RemoteDataSource private constructor(private val apiService: ApiService) {
-    companion object {
-        @Volatile
-        private var instance: RemoteDataSource? = null
-
-        fun getInstance(service: ApiService): RemoteDataSource =
-            instance ?: synchronized(this) {
-                instance ?: RemoteDataSource(service)
-            }
-    }
-
+@Singleton
+class RemoteDataSource @Inject constructor(private val apiService: ApiService) {
     fun getAllMovie(): Flowable<ApiResponse<List<MovieResponse>>> {
         val resultData = PublishSubject.create<ApiResponse<List<MovieResponse>>>()
         val client = apiService.getList(BuildConfig.API_KEY)

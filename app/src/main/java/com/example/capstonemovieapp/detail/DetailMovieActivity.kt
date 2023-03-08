@@ -3,23 +3,30 @@ package com.example.capstonemovieapp.detail
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
+import com.example.capstonemovieapp.MyApplication
 import com.example.capstonemovieapp.R
 import com.example.capstonemovieapp.core.domain.model.Movie
 import com.example.capstonemovieapp.core.ui.ViewModelFactory
 import com.example.capstonemovieapp.databinding.ActivityDetailMovieBinding
+import javax.inject.Inject
 
 class DetailMovieActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailMovieBinding
-    private lateinit var detailMovieViewModel: DetailMovieViewModel
+
+    @Inject
+    lateinit var factory: ViewModelFactory
+
+    private val detailMovieViewModel: DetailMovieViewModel by viewModels {
+        factory
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
+        (application as MyApplication).appComponent.inject(this)
         super.onCreate(savedInstanceState)
         binding = ActivityDetailMovieBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        val factory = ViewModelFactory.getInstance(this)
-        detailMovieViewModel = ViewModelProvider(this, factory)[DetailMovieViewModel::class.java]
 
         val data = intent?.getParcelableExtra<Movie>(EXTRA_DATA)
         binding.tvDetailMovie.text = data?.overview
@@ -27,7 +34,6 @@ class DetailMovieActivity : AppCompatActivity() {
         var statusFavorite = data?.isFavorite
         if (statusFavorite != null) {
             setStatusFavorite(statusFavorite)
-            Toast.makeText(this@DetailMovieActivity, "$statusFavorite", Toast.LENGTH_LONG).show()
         }
 
         binding.fabFav.setOnClickListener {

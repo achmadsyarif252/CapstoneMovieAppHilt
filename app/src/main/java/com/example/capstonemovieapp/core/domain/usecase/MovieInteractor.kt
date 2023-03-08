@@ -1,11 +1,10 @@
 package com.example.capstonemovieapp.core.domain.usecase
 
-import androidx.lifecycle.LiveData
-import com.example.capstonemovieapp.core.data.Resource
 import com.example.capstonemovieapp.core.domain.model.Movie
 import com.example.capstonemovieapp.core.domain.repository.IMovieRepository
+import javax.inject.Inject
 
-class MovieInteractor(private val movieRepository: IMovieRepository) : MovieUseCase {
+class MovieInteractor @Inject constructor(private val movieRepository: IMovieRepository) : MovieUseCase {
     override fun getAllPopularMovie() = movieRepository.getAllPopularMovie()
 
     override fun getFavoriteMovie() = movieRepository.getFavoriteMovie()
