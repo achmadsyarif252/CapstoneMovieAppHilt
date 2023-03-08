@@ -5,33 +5,32 @@ import com.example.capstonemovieapp.BuildConfig
 import com.example.capstonemovieapp.core.data.source.remote.network.ApiResponse
 import com.example.capstonemovieapp.core.data.source.remote.network.ApiService
 import com.example.capstonemovieapp.core.data.source.remote.response.MovieResponse
-import io.reactivex.BackpressureStrategy
-import io.reactivex.Flowable
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
-import io.reactivex.subjects.PublishSubject
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
 class RemoteDataSource @Inject constructor(private val apiService: ApiService) {
-    fun getAllMovie(): Flowable<ApiResponse<List<MovieResponse>>> {
-        val resultData = PublishSubject.create<ApiResponse<List<MovieResponse>>>()
-        val client = apiService.getList(BuildConfig.API_KEY)
-
-        client.subscribeOn(Schedulers.computation())
-            .observeOn(AndroidSchedulers.mainThread())
-            .take(1)
-            .subscribe({ response ->
+    suspend fun getAllMovie(): Flow<ApiResponse<List<MovieResponse>>> {
+        return flow {
+            try {
+                val response = apiService.getList(BuildConfig.API_KEY)
                 val dataArray = response.results
                 if (dataArray != null) {
-                    resultData.onNext((if (dataArray.isNotEmpty()) ApiResponse.Success(dataArray) else ApiResponse.Empty))
+                    if (dataArray.isNotEmpty()){
+                        emit(ApiResponse.Success(response.results))
+                    } else {
+                        emit(ApiResponse.Empty)
+                    }
                 }
-            }, { error ->
-                resultData.onNext(ApiResponse.Error(error.message.toString()))
-                Log.e("RemoteDataSource", error.toString())
-            })
-        return resultData.toFlowable(BackpressureStrategy.BUFFER)
+            } catch (e : Exception){
+                emit(ApiResponse.Error(e.toString()))
+                Log.e("RemoteDataSource", e.toString())
+            }
+        }.flowOn(Dispatchers.IO)
     }
 }
 

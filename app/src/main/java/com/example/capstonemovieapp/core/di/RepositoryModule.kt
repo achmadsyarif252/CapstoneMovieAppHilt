@@ -4,8 +4,11 @@ import com.example.capstonemovieapp.core.data.MovieRepository
 import com.example.capstonemovieapp.core.domain.repository.IMovieRepository
 import dagger.Binds
 import dagger.Module
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 
-@Module(includes = [NetworkModule::class, DatabaseModule::class])
+@Module
+@InstallIn(SingletonComponent::class)
 abstract class RepositoryModule {
 
     @Binds

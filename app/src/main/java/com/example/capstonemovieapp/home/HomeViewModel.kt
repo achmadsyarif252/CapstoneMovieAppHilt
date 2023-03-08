@@ -1,9 +1,12 @@
 package com.example.capstonemovieapp.home
 
-import androidx.lifecycle.LiveDataReactiveStreams
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
 import com.example.capstonemovieapp.core.domain.usecase.MovieUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class HomeViewModel(movieUseCase: MovieUseCase) : ViewModel() {
-    val movie = LiveDataReactiveStreams.fromPublisher(movieUseCase.getAllPopularMovie())
+@HiltViewModel
+class HomeViewModel @Inject constructor(movieUseCase: MovieUseCase) : ViewModel() {
+    val movie = movieUseCase.getAllPopularMovie().asLiveData()
 }
