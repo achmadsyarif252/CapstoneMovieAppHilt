@@ -1,7 +1,7 @@
 package com.example.capstonemovieapp.di
 
-import com.example.capstonemovieapp.core.domain.usecase.MovieInteractor
-import com.example.capstonemovieapp.core.domain.usecase.MovieUseCase
+import com.example.core.domain.usecase.MovieInteractor
+import com.example.core.domain.usecase.MovieUseCase
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

@@ -5,6 +5,7 @@ plugins {
     id 'kotlin-kapt'
     id 'com.google.dagger.hilt.android'
 }
+apply from: '../shared_dependencies.gradle'
 
 android {
     namespace 'com.example.capstonemovieapp'
@@ -16,7 +17,6 @@ android {
         targetSdk 33
         versionCode 1
         versionName "1.0"
-        buildConfigField("String","API_KEY","\"43277683d14f2f663ed1f96d97f1d436\"")
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -40,11 +40,14 @@ android {
 }
 
 dependencies {
+    implementation project(":core")
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.21"
+
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-
 
     implementation "androidx.cardview:cardview:1.0.0"
     implementation "androidx.recyclerview:recyclerview:1.2.1"

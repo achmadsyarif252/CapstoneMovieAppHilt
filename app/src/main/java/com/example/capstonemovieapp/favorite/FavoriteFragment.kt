@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.capstonemovieapp.core.ui.MovieAdapter
+import com.example.core.ui.MovieAdapter
 import com.example.capstonemovieapp.databinding.FragmentFavoriteBinding
 import com.example.capstonemovieapp.detail.DetailMovieActivity
 import dagger.hilt.android.AndroidEntryPoint

@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import com.example.capstonemovieapp.R
-import com.example.capstonemovieapp.core.domain.model.Movie
+import com.example.core.domain.model.Movie
 import com.example.capstonemovieapp.databinding.ActivityDetailMovieBinding
 import dagger.hilt.android.AndroidEntryPoint
 
