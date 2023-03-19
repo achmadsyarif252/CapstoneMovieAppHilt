@@ -17,16 +17,16 @@ class RemoteDataSource @Inject constructor(private val apiService: ApiService) {
     suspend fun getAllMovie(): Flow<ApiResponse<List<MovieResponse>>> {
         return flow {
             try {
-                val response = apiService.getList(BuildConfig.API_KEY)
+                val response = apiService.getList(BuildConfig.API_KEY, 3)
                 val dataArray = response.results
                 if (dataArray != null) {
-                    if (dataArray.isNotEmpty()){
+                    if (dataArray.isNotEmpty()) {
                         emit(ApiResponse.Success(response.results))
                     } else {
                         emit(ApiResponse.Empty)
                     }
                 }
-            } catch (e : Exception){
+            } catch (e: Exception) {
                 emit(ApiResponse.Error(e.toString()))
                 Log.e("RemoteDataSource", e.toString())
             }

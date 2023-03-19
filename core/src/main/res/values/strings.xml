@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="image_description">Image of the movie</string>
+    <string name="text_primary">Avengers End Game</string>
+    <string name="text_subtitle">Film pahlawan super Amerika 2019 yang didasarkan pada tim uperhero Avengers dari Marvel Comics</string>
+</resources>

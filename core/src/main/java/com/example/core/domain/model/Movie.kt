@@ -1,7 +1,7 @@
 package com.example.core.domain.model
 
 import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Movie(
@@ -10,7 +10,6 @@ data class Movie(
     val originalTitle: String? = null,
     val video: Boolean? = null,
     val title: String? = null,
-    val genreIds: List<Int?>? = null,
     val posterPath: String? = null,
     val backdropPath: String? = null,
     val releaseDate: String? = null,

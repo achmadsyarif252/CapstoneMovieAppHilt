@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
+import com.bumptech.glide.Glide
 import com.example.capstonemovieapp.R
 import com.example.core.domain.model.Movie
 import com.example.capstonemovieapp.databinding.ActivityDetailMovieBinding
@@ -18,8 +19,13 @@ class DetailMovieActivity : AppCompatActivity() {
         binding = ActivityDetailMovieBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.title = "Detail Movie"
+
         val data = intent?.getParcelableExtra<Movie>(EXTRA_DATA)
-        binding.tvDetailMovie.text = data?.overview
+        binding.tvOverview.text = data?.overview
+        binding.title.text = data?.title
+        Glide.with(applicationContext).load(data?.posterPath).placeholder(R.drawable.cinema)
+            .into(binding.poster)
 
         var statusFavorite = data?.isFavorite
         if (statusFavorite != null) {

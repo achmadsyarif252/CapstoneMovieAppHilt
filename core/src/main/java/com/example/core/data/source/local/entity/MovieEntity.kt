@@ -25,10 +25,6 @@ data class MovieEntity(
     @ColumnInfo(name = "title")
     var title: String? = null,
 
-    @ColumnInfo(name = "genreIds")
-    @field:TypeConverters(IntTypeConverter::class)
-    var genreIds: List<Int?>? = null,
-
     @ColumnInfo(name = "posterPath")
     var posterPath: String? = null,
 

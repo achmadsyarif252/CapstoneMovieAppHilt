@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.capstonemovieapp.R
 import com.example.core.data.Resource
@@ -16,13 +17,12 @@ import com.example.capstonemovieapp.databinding.FragmentHomeBinding
 import com.example.capstonemovieapp.detail.DetailMovieActivity
 import dagger.hilt.android.AndroidEntryPoint
 
+
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
     private val homeViewModel: HomeViewModel by viewModels()
     private var _binding: FragmentHomeBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -51,7 +51,6 @@ class HomeFragment : Fragment() {
                         is Resource.Success -> {
                             binding.progressBar.visibility = View.GONE
                             movieAdapter.setData(movie.data)
-                            Log.d("Movie",movie.data.toString())
                         }
                         is Resource.Error -> {
                             binding.progressBar.visibility = View.GONE
@@ -64,7 +63,7 @@ class HomeFragment : Fragment() {
             }
 
             with(binding.rvMovie) {
-                layoutManager = LinearLayoutManager(context)
+                layoutManager = GridLayoutManager(context, 2)
                 setHasFixedSize(true)
                 adapter = movieAdapter
             }
