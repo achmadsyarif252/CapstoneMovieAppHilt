@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_setting, R.id.navigation_favorite
+                R.id.navigation_home, R.id.navigation_setting
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.menu1 -> {
-                val uri = Uri.parse("capstonemovieapp://fandom")
+                val uri = Uri.parse("capstonemovieapp://favorite")
                 startActivity(Intent(Intent.ACTION_VIEW, uri))
                 return true
             }

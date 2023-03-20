@@ -5,8 +5,8 @@
         <item
             android:id="@+id/menu1"
             app:showAsAction="always"
-            android:icon="@drawable/baseline_movie_filter_24"
-            android:title="@string/menu_fandom" />
+            android:icon="@drawable/ic_favorite_white"
+            android:title="@string/title_favorite" />
 
     </group>
 </menu>
