@@ -19,9 +19,6 @@ data class MovieEntity(
     @ColumnInfo(name = "originalTitle")
     var originalTitle: String? = null,
 
-    @ColumnInfo(name = "video")
-    var video: Boolean? = null,
-
     @ColumnInfo(name = "title")
     var title: String? = null,
 
@@ -34,21 +31,9 @@ data class MovieEntity(
     @ColumnInfo(name = "releaseDate")
     var releaseDate: String? = null,
 
-    @ColumnInfo(name = "popularity")
-    var popularity: Double? = null,
-
-    @ColumnInfo(name = "voteAverage")
-    var voteAverage: Double? = null,
-
     @PrimaryKey
     @ColumnInfo(name = "id")
     var id: Int? = null,
-
-    @ColumnInfo(name = "adult")
-    var adult: Boolean? = null,
-
-    @ColumnInfo(name = "voteCount")
-    var voteCount: Int? = null,
 
     @ColumnInfo(name = "isFavorite")
     var isFavorite: Boolean = false

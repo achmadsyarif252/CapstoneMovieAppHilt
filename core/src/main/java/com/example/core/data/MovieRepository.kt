@@ -1,5 +1,6 @@
 package com.example.core.data
 
+import androidx.lifecycle.LiveData
 import com.example.core.utils.DataMapper
 import com.example.core.data.source.local.LocalDataSource
 import com.example.core.data.source.remote.RemoteDataSource
@@ -31,7 +32,7 @@ class MovieRepository @Inject constructor(
                 data == null || data.isEmpty()
 
             override suspend fun createCall(): Flow<ApiResponse<List<MovieResponse>>> =
-                remoteDataSource.getAllMovie()
+                remoteDataSource.getAllMovie() as Flow<ApiResponse<List<MovieResponse>>>
 
             override suspend fun saveCallResult(data: List<MovieResponse>) {
                 val movieList = DataMapper.mapResponsesToEntities(data)

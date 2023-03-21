@@ -12,16 +12,11 @@ object DataMapper {
                 overview = it.overview,
                 originalLanguage = it.originalLanguage,
                 originalTitle = it.originalTitle,
-                video = it.video,
                 title = it.title,
                 posterPath = it.posterPath,
                 backdropPath = it.backdropPath,
                 releaseDate = it.releaseDate,
-                popularity = it.popularity,
-                voteAverage = it.voteAverage,
                 id = it.id,
-                adult = it.adult,
-                voteCount = it.voteCount,
                 isFavorite = false
             )
             movieList.add(movie)
@@ -35,16 +30,11 @@ object DataMapper {
                 overview = it.overview,
                 originalLanguage = it.originalLanguage,
                 originalTitle = it.originalTitle,
-                video = it.video,
                 title = it.title,
                 posterPath = it.posterPath,
                 backdropPath = it.backdropPath,
                 releaseDate = it.releaseDate,
-                popularity = it.popularity,
-                voteAverage = it.voteAverage,
                 id = it.id,
-                adult = it.adult,
-                voteCount = it.voteCount,
                 isFavorite = it.isFavorite
             )
         }
@@ -53,16 +43,11 @@ object DataMapper {
         overview = input.overview,
         originalLanguage = input.originalLanguage,
         originalTitle = input.originalTitle,
-        video = input.video,
         title = input.title,
         posterPath = input.posterPath,
         backdropPath = input.backdropPath,
         releaseDate = input.releaseDate,
-        popularity = input.popularity,
-        voteAverage = input.voteAverage,
         id = input.id,
-        adult = input.adult,
-        voteCount = input.voteCount,
         isFavorite = input.isFavorite
     )
 }

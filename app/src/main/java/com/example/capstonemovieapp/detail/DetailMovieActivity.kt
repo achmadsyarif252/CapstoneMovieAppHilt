@@ -24,7 +24,7 @@ class DetailMovieActivity : AppCompatActivity() {
         val data = intent?.getParcelableExtra<Movie>(EXTRA_DATA)
         binding.tvOverview.text = data?.overview
         binding.title.text = data?.title
-        Glide.with(applicationContext).load(data?.posterPath).placeholder(R.drawable.cinema)
+        Glide.with(applicationContext).load("https://image.tmdb.org/t/p/w500"+data?.posterPath).placeholder(R.drawable.cinema)
             .into(binding.poster)
 
         var statusFavorite = data?.isFavorite

@@ -1,7 +1,6 @@
 package com.example.favorit
 
 import android.content.Context
-import com.example.capstonemovieapp.di.FandomModuleDependencies
 import com.example.capstonemovieapp.di.FavoritModuleDependencies
 import dagger.BindsInstance
 import dagger.Component

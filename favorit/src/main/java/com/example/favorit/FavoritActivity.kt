@@ -8,7 +8,6 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.capstonemovieapp.detail.DetailMovieActivity
-import com.example.capstonemovieapp.di.FandomModuleDependencies
 import com.example.capstonemovieapp.di.FavoritModuleDependencies
 import com.example.core.ui.MovieAdapter
 import com.example.favorit.databinding.ActivityFavoritBinding
