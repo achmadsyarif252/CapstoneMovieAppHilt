@@ -14,7 +14,7 @@ interface MovieDao {
     fun getFavoriteMovie(): Flow<List<MovieEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-   suspend fun insertMovie(tourism: List<MovieEntity>)
+    suspend fun insertMovie(movie: List<MovieEntity>)
 
     @Update
     fun updateFavoriteMovie(movie: MovieEntity)
