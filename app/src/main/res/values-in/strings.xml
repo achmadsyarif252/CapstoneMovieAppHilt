@@ -11,5 +11,6 @@
     <string name="dark_mode">Tema Mode Gelap</string>
     <string name="title_home">Beranda</string>
     <string name="language_setting">Pengaturan Bahasa</string>
+    <string name="title_favorit">Favorit</string>
 
 </resources>
