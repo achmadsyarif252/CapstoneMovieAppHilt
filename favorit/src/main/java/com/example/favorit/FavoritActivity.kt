@@ -41,7 +41,7 @@ class FavoritActivity : AppCompatActivity() {
         binding = ActivityFavoritBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        supportActionBar?.title = "Your Favorite Movie"
+        supportActionBar?.title = "Favorite Movie"
 
         val favMovieAdapter = MovieAdapter()
         favMovieAdapter.onItemClick = { selectedData ->
