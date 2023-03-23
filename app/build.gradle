@@ -6,7 +6,6 @@ plugins {
     id 'com.google.dagger.hilt.android'
 }
 apply from: '../shared_dependencies.gradle'
-apply plugin: 'jacoco'
 
 
 android {
@@ -29,7 +28,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
-            testCoverageEnabled true
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
