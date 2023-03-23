@@ -6,6 +6,8 @@ plugins {
     id 'com.google.dagger.hilt.android'
 }
 apply from: '../shared_dependencies.gradle'
+apply plugin: 'jacoco'
+
 
 android {
     namespace 'com.example.capstonemovieapp'
