@@ -40,7 +40,7 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.ListViewHolder>() {
         fun bind(data: Movie) {
             with(binding) {
                 Glide.with(itemView.context)
-                    .load("https://image.tmdb.org/t/p/w500${data.posterPath}")
+                    .load("https://image.tmdb.org/t/p/w500${data.backdropPath}")
                     .placeholder(R.drawable.cinema_placeholder)
                     .into(ivItemImage)
                 tvItemTitle.text = data.title
