@@ -5,9 +5,15 @@ orbs:
 
 jobs:
   build:
+    docker:
+      - image: circleci/android:api-30
     executor: android/android
     steps:
       - checkout
+      - run: echo "Set up environment"
+      - run: ./gradlew lintKotlin ktlintCheck dependencyCheckAnalyze check
+      - run: ./gradlew jacocoTestReport
+      - run: echo "Build APK and distribute"
       - restore_cache:
           key: android-orb-v1-
       - run:
