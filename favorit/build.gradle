@@ -29,4 +29,6 @@ android {
 dependencies {
     implementation project(":app")
     implementation project(path: ':core')
+    implementation "com.airbnb.android:lottie:3.6.0"
+
 }
