@@ -11,4 +11,6 @@
     <string name="title_home">Home</string>
     <string name="language_setting">Language Setting</string>
     <string name="title_favorit">Favorit</string>
+    <string name="movie_image">movie image preview</string>
+    <string name="fav_btn_set">Make Favorite Movie</string>
 </resources>

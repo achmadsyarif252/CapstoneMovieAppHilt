@@ -10,10 +10,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:drawableEnd="@drawable/baseline_settings_24"
+        android:drawableStart="@drawable/baseline_language_24"
+        android:drawablePadding="8dp"
         android:text="@string/language_setting"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

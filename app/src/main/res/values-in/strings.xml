@@ -12,5 +12,6 @@
     <string name="title_home">Beranda</string>
     <string name="language_setting">Pengaturan Bahasa</string>
     <string name="title_favorit">Favorit</string>
-
+    <string name="movie_image">Tampilan gambar film</string>
+    <string name="fav_btn_set">Buat Movie Favorit</string>
 </resources>

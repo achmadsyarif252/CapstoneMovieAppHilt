@@ -15,8 +15,8 @@ import java.util.concurrent.TimeUnit
 @Module
 @InstallIn(SingletonComponent::class)
 class NetworkModule {
-    val hostname = "api.themoviedb.org"
-    val certificatePinner = CertificatePinner.Builder()
+    private val hostname = "api.themoviedb.org"
+    private val certificatePinner = CertificatePinner.Builder()
         .add(hostname, "sha256/NPIMWkzcNG/MyZsVExrC6tdy5LTZzeeKg2UlnGG55UY=")
         .build()
 

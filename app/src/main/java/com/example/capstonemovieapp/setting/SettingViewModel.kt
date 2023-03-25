@@ -1,8 +1,5 @@
 package com.example.capstonemovieapp.setting
 
-import androidx.lifecycle.*
-import kotlinx.coroutines.launch
+import androidx.lifecycle.ViewModel
 
-class SettingViewModel : ViewModel() {
-
-}
+class SettingViewModel : ViewModel()
