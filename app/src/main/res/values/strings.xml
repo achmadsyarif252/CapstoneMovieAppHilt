@@ -1,13 +1,9 @@
 <resources>
     <string name="app_name">CapstoneMovieApp</string>
-    <string name="title_dashboard">Dashboard</string>
     <string name="title_favorite">Favorite</string>
     <string name="something_wrong">Error something wrong</string>
     <string name="no_data">No current favorite movie</string>
-    <string name="title_fandom">Fandom</string>
-    <string name="menu_fandom">Fandom Menu</string>
     <string name="title_setting">Setting</string>
-    <string name="dark_mode">Dark Mode Theme</string>
     <string name="title_home">Home</string>
     <string name="language_setting">Language Setting</string>
     <string name="title_favorit">Favorit</string>

@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">CapstoneMovieApp</string>
-    <string name="title_dashboard">Beranda</string>
     <string name="title_favorite">Favorit</string>
     <string name="something_wrong">Ada sesuatu yang salah</string>
     <string name="no_data">Tidak ada film favorit saat ini</string>
-    <string name="title_fandom">Fandom</string>
-    <string name="menu_fandom">Menu Fandom</string>
     <string name="title_setting">Pengaturan</string>
-    <string name="dark_mode">Tema Mode Gelap</string>
     <string name="title_home">Beranda</string>
     <string name="language_setting">Pengaturan Bahasa</string>
     <string name="title_favorit">Favorit</string>
