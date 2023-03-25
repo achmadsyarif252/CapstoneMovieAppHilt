@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:drawableStart="@drawable/baseline_language_24"
+        android:drawableStart="@drawable/baseline_language"
         android:drawablePadding="8dp"
         android:text="@string/language_setting"
         android:textSize="18sp"
