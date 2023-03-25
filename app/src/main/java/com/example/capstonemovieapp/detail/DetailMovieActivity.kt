@@ -24,16 +24,17 @@ class DetailMovieActivity : AppCompatActivity() {
         val data = intent?.getParcelableExtra<Movie>(EXTRA_DATA)
         binding.tvOverview.text = data?.overview
         binding.title.text = data?.title
-        Glide.with(applicationContext).load("https://image.tmdb.org/t/p/w500"+data?.posterPath).placeholder(R.drawable.cinema)
+        Glide.with(applicationContext).load("https://image.tmdb.org/t/p/w500" + data?.posterPath)
+            .placeholder(R.drawable.cinema)
             .into(binding.poster)
 
-        var statusFavorite = data?.isFavorite
+        var statusFavorite: Boolean? = data?.isFavorite
         if (statusFavorite != null) {
             setStatusFavorite(statusFavorite)
         }
 
         binding.fabFav.setOnClickListener {
-            statusFavorite = !statusFavorite!!
+            statusFavorite = statusFavorite?.not()
             if (data != null) {
                 statusFavorite?.let { it1 -> detailMovieViewModel.setFavoriteMovie(data, it1) }
             }
